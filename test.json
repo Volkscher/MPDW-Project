@@ -1,0 +1,1419 @@
+{
+  "o1WPnnvs00I": {
+    "duration": 229.86,
+    "subset": "training",
+    "resolution": "640x480",
+    "url": "https://www.youtube.com/watch?v=o1WPnnvs00I",
+    "annotations": [
+      {
+        "segment": [
+          4.303033313169262,
+          13.626272158369328
+        ],
+        "label": "Playing flauta"
+      },
+      {
+        "segment": [
+          17.92930547153859,
+          24.025269212168485
+        ],
+        "label": "Playing flauta"
+      },
+      {
+        "segment": [
+          28.68688861154446,
+          35.50002465678627
+        ],
+        "label": "Playing flauta"
+      },
+      {
+        "segment": [
+          39.085885733229325,
+          40.52023016380655
+        ],
+        "label": "Playing flauta"
+      },
+      {
+        "segment": [
+          45.89902177847114,
+          48.767710639625584
+        ],
+        "label": "Playing flauta"
+      },
+      {
+        "segment": [
+          59.16670776131045,
+          63.469741053042114
+        ],
+        "label": "Playing flauta"
+      },
+      {
+        "segment": [
+          68.1313604524181,
+          95.02531852574101
+        ],
+        "label": "Playing flauta"
+      },
+      {
+        "segment": [
+          98.96976570982838,
+          99.686937925117
+        ],
+        "label": "Playing flauta"
+      },
+      {
+        "segment": [
+          100.7626962480499,
+          108.65159061622464
+        ],
+        "label": "Playing flauta"
+      },
+      {
+        "segment": [
+          111.16169336973478,
+          111.52027947737909
+        ],
+        "label": "Playing flauta"
+      },
+      {
+        "segment": [
+          114.38896833853353,
+          120.84351827613104
+        ],
+        "label": "Playing flauta"
+      },
+      {
+        "segment": [
+          125.50513767550702,
+          128.73241264430575
+        ],
+        "label": "Playing flauta"
+      },
+      {
+        "segment": [
+          131.95968761310453,
+          140.56575419656784
+        ],
+        "label": "Playing flauta"
+      },
+      {
+        "segment": [
+          143.075856950078,
+          157.06071514820593
+        ],
+        "label": "Playing flauta"
+      },
+      {
+        "segment": [
+          158.49505957878316,
+          162.0809206552262
+        ],
+        "label": "Playing flauta"
+      },
+      {
+        "segment": [
+          164.59102340873633,
+          166.3839539469579
+        ],
+        "label": "Playing flauta"
+      },
+      {
+        "segment": [
+          168.894056700468,
+          171.04557334633384
+        ],
+        "label": "Playing flauta"
+      },
+      {
+        "segment": [
+          173.1970899921997,
+          190.40922315912636
+        ],
+        "label": "Playing flauta"
+      },
+      {
+        "segment": [
+          193.9950842355694,
+          194.712256450858
+        ],
+        "label": "Playing flauta"
+      },
+      {
+        "segment": [
+          204.7526674648986,
+          212.6415618330733
+        ],
+        "label": "Playing flauta"
+      },
+      {
+        "segment": [
+          214.43449237129485,
+          217.66176734009358
+        ],
+        "label": "Playing flauta"
+      },
+      {
+        "segment": [
+          219.81328398595943,
+          221.24762841653666
+        ],
+        "label": "Playing flauta"
+      },
+      {
+        "segment": [
+          222.68197284711388,
+          224.8334894929797
+        ],
+        "label": "Playing flauta"
+      }
+    ]
+  },
+  "oGwn4NUeoy8": {
+    "duration": 153.09,
+    "subset": "training",
+    "resolution": "640x480",
+    "url": "https://www.youtube.com/watch?v=oGwn4NUeoy8",
+    "annotations": [
+      {
+        "segment": [
+          37.01843986684637,
+          42.0338413971933
+        ],
+        "label": "Playing congas"
+      },
+      {
+        "segment": [
+          38.929069021264255,
+          43.227984618704475
+        ],
+        "label": "Playing congas"
+      },
+      {
+        "segment": [
+          14.568547302436315,
+          17.43449103406313
+        ],
+        "label": "Playing congas"
+      },
+      {
+        "segment": [
+          19.34512018848101,
+          20.77809205429442
+        ],
+        "label": "Playing congas"
+      },
+      {
+        "segment": [
+          22.688721208712295,
+          26.032322228943578
+        ],
+        "label": "Playing congas"
+      },
+      {
+        "segment": [
+          28.65943731626816,
+          30.80889511498827
+        ],
+        "label": "Playing congas"
+      },
+      {
+        "segment": [
+          33.91366749091732,
+          36.5407825782419
+        ],
+        "label": "Playing congas"
+      },
+      {
+        "segment": [
+          39.40672630986872,
+          42.0338413971933
+        ],
+        "label": "Playing congas"
+      },
+      {
+        "segment": [
+          44.66095648451788,
+          47.04924292754023
+        ],
+        "label": "Playing congas"
+      },
+      {
+        "segment": [
+          50.39284394777152,
+          52.78113039079386
+        ],
+        "label": "Playing congas"
+      },
+      {
+        "segment": [
+          56.12473141102515,
+          59.46833243125643
+        ],
+        "label": "Playing congas"
+      },
+      {
+        "segment": [
+          62.33427616288325,
+          65.91670582741676
+        ],
+        "label": "Playing congas"
+      },
+      {
+        "segment": [
+          68.78264955904359,
+          73.32039380078605
+        ],
+        "label": "Playing congas"
+      },
+      {
+        "segment": [
+          76.90282346531956,
+          80.96291041845755
+        ],
+        "label": "Playing congas"
+      },
+      {
+        "segment": [
+          83.82885415008438,
+          87.65011245892013
+        ],
+        "label": "Playing congas"
+      },
+      {
+        "segment": [
+          90.99371347915141,
+          94.33731449938269
+        ],
+        "label": "Playing congas"
+      },
+      {
+        "segment": [
+          100.54685925124079,
+          104.36811756007654
+        ],
+        "label": "Playing congas"
+      },
+      {
+        "segment": [
+          104.60694620437879,
+          109.86117637902795
+        ],
+        "label": "Playing congas"
+      },
+      {
+        "segment": [
+          114.3989206207704,
+          119.1754935068151
+        ],
+        "label": "Playing congas"
+      },
+      {
+        "segment": [
+          121.80260859413968,
+          122.28026588274415
+        ],
+        "label": "Playing congas"
+      },
+      {
+        "segment": [
+          126.81801012448662,
+          131.5945830105313
+        ],
+        "label": "Playing congas"
+      },
+      {
+        "segment": [
+          133.74404080925143,
+          139.47592827250503
+        ],
+        "label": "Playing congas"
+      },
+      {
+        "segment": [
+          142.5807006484341,
+          148.55141675598995
+        ],
+        "label": "Playing congas"
+      }
+    ]
+  },
+  "VEDRmPt_-Ms": {
+    "duration": 232.07999999999998,
+    "subset": "training",
+    "resolution": "960x720",
+    "url": "https://www.youtube.com/watch?v=VEDRmPt_-Ms",
+    "annotations": [
+      {
+        "segment": [
+          15.568780241809671,
+          21.723879407176288
+        ],
+        "label": "Tumbling"
+      },
+      {
+        "segment": [
+          21.723879407176288,
+          27.878978572542902
+        ],
+        "label": "Tumbling"
+      },
+      {
+        "segment": [
+          29.32723719968799,
+          34.75820705148206
+        ],
+        "label": "Tumbling"
+      },
+      {
+        "segment": [
+          34.75820705148206,
+          39.82711224648986
+        ],
+        "label": "Tumbling"
+      },
+      {
+        "segment": [
+          40.189176903276135,
+          49.24079332293292
+        ],
+        "label": "Tumbling"
+      },
+      {
+        "segment": [
+          49.60285797971919,
+          55.757957145085804
+        ],
+        "label": "Tumbling"
+      },
+      {
+        "segment": [
+          57.56828042901716,
+          64.80957356474259
+        ],
+        "label": "Tumbling"
+      },
+      {
+        "segment": [
+          65.17163822152887,
+          77.4818365522621
+        ],
+        "label": "Tumbling"
+      },
+      {
+        "segment": [
+          77.4818365522621,
+          85.80932365834634
+        ],
+        "label": "Tumbling"
+      },
+      {
+        "segment": [
+          85.44725900156007,
+          93.41268145085805
+        ],
+        "label": "Tumbling"
+      },
+      {
+        "segment": [
+          93.05061679407176,
+          98.8436513026521
+        ],
+        "label": "Tumbling"
+      },
+      {
+        "segment": [
+          93.41268145085805,
+          108.98146169266771
+        ],
+        "label": "Tumbling"
+      },
+      {
+        "segment": [
+          108.98146169266771,
+          118.75720742589704
+        ],
+        "label": "Tumbling"
+      },
+      {
+        "segment": [
+          130.70534109984402,
+          136.86044026521063
+        ],
+        "label": "Tumbling"
+      },
+      {
+        "segment": [
+          137.94663423556943,
+          149.17063859594387
+        ],
+        "label": "Tumbling"
+      },
+      {
+        "segment": [
+          149.53270325273013,
+          158.94638432917318
+        ],
+        "label": "Tumbling"
+      },
+      {
+        "segment": [
+          159.30844898595944,
+          166.5497421216849
+        ],
+        "label": "Tumbling"
+      },
+      {
+        "segment": [
+          166.5497421216849,
+          177.7737464820593
+        ],
+        "label": "Tumbling"
+      },
+      {
+        "segment": [
+          177.41168182527304,
+          190.80807412636506
+        ],
+        "label": "Tumbling"
+      },
+      {
+        "segment": [
+          190.4460094695788,
+          200.94588451638066
+        ],
+        "label": "Tumbling"
+      }
+    ]
+  },
+  "qF3EbR8y8go": {
+    "duration": 204.1,
+    "subset": "training",
+    "resolution": "1920x1080",
+    "url": "https://www.youtube.com/watch?v=qF3EbR8y8go",
+    "annotations": [
+      {
+        "segment": [
+          2.865726384157407,
+          9.55242128052469
+        ],
+        "label": "Painting"
+      },
+      {
+        "segment": [
+          14.647045963471191,
+          17.831186390312755
+        ],
+        "label": "Painting"
+      },
+      {
+        "segment": [
+          26.109951500100816,
+          28.02043575620576
+        ],
+        "label": "Painting"
+      },
+      {
+        "segment": [
+          30.249334054994854,
+          32.478232353783945
+        ],
+        "label": "Painting"
+      },
+      {
+        "segment": [
+          35.025544695257196,
+          37.57285703673045
+        ],
+        "label": "Painting"
+      },
+      {
+        "segment": [
+          40.75699739157566,
+          44.57796589703588
+        ],
+        "label": "Painting"
+      },
+      {
+        "segment": [
+          52.538316950078,
+          55.722457371294844
+        ],
+        "label": "Painting"
+      },
+      {
+        "segment": [
+          60.817082045241804,
+          64.00122246645866
+        ],
+        "label": "Painting"
+      },
+      {
+        "segment": [
+          68.45901905616225,
+          72.27998756162246
+        ],
+        "label": "Painting"
+      },
+      {
+        "segment": [
+          75.14571394071763,
+          87.56386158346334
+        ],
+        "label": "Painting"
+      },
+      {
+        "segment": [
+          95.20579859438378,
+          102.84773560530421
+        ],
+        "label": "Painting"
+      },
+      {
+        "segment": [
+          106.98711815288611,
+          112.40015686895475
+        ],
+        "label": "Painting"
+      },
+      {
+        "segment": [
+          121.31575004836193,
+          130.5497572698908
+        ],
+        "label": "Painting"
+      },
+      {
+        "segment": [
+          142.01266278627145,
+          148.06252958658345
+        ],
+        "label": "Painting"
+      },
+      {
+        "segment": [
+          150.60984192355696,
+          153.47556830265208
+        ],
+        "label": "Painting"
+      },
+      {
+        "segment": [
+          157.2965368081123,
+          159.8438491450858
+        ],
+        "label": "Painting"
+      },
+      {
+        "segment": [
+          166.84895807176287,
+          170.66992657722307
+        ],
+        "label": "Painting"
+      },
+      {
+        "segment": [
+          172.5804108299532,
+          178.6302776302652
+        ],
+        "label": "Painting"
+      },
+      {
+        "segment": [
+          183.40648826209048,
+          197.0982920733229
+        ],
+        "label": "Painting"
+      }
+    ]
+  },
+  "DLJqhYP-C0k": {
+    "duration": 186.968,
+    "subset": "training",
+    "resolution": "1920x1080",
+    "url": "https://www.youtube.com/watch?v=DLJqhYP-C0k",
+    "annotations": [
+      {
+        "segment": [
+          11.083851549980366,
+          16.62577732497055
+        ],
+        "label": "Playing ten pins"
+      },
+      {
+        "segment": [
+          22.459383403907584,
+          27.709628874950916
+        ],
+        "label": "Playing ten pins"
+      },
+      {
+        "segment": [
+          28.876350090738324,
+          32.959874345994244
+        ],
+        "label": "Playing ten pins"
+      },
+      {
+        "segment": [
+          35.29331677756906,
+          42.877004680187206
+        ],
+        "label": "Playing ten pins"
+      },
+      {
+        "segment": [
+          45.793807719655724,
+          49.29397136701794
+        ],
+        "label": "Playing ten pins"
+      },
+      {
+        "segment": [
+          51.04405319069905,
+          54.83589714200812
+        ],
+        "label": "Playing ten pins"
+      },
+      {
+        "segment": [
+          58.62774109331719,
+          62.12790474067942
+        ],
+        "label": "Playing ten pins"
+      },
+      {
+        "segment": [
+          63.58630626041368,
+          68.25319112356331
+        ],
+        "label": "Playing ten pins"
+      },
+      {
+        "segment": [
+          69.12823203540385,
+          72.33671537881924
+        ],
+        "label": "Playing ten pins"
+      },
+      {
+        "segment": [
+          75.25351841828774,
+          79.33704267354368
+        ],
+        "label": "Playing ten pins"
+      },
+      {
+        "segment": [
+          80.50376388933107,
+          84.29560784064014
+        ],
+        "label": "Playing ten pins"
+      },
+      {
+        "segment": [
+          85.46232905642756,
+          87.21241088010868
+        ],
+        "label": "Playing ten pins"
+      },
+      {
+        "segment": [
+          89.25417300773663,
+          113.46363773166925
+        ],
+        "label": "Playing ten pins"
+      },
+      {
+        "segment": [
+          114.6303589422777,
+          120.46396499531981
+        ],
+        "label": "Playing ten pins"
+      },
+      {
+        "segment": [
+          122.21404681123245,
+          131.25613619344773
+        ],
+        "label": "Playing ten pins"
+      },
+      {
+        "segment": [
+          133.8812589173167,
+          143.5067089048362
+        ],
+        "label": "Playing ten pins"
+      },
+      {
+        "segment": [
+          144.3817498127925,
+          154.007199800312
+        ],
+        "label": "Playing ten pins"
+      },
+      {
+        "segment": [
+          171.21633765678627,
+          178.2166649204368
+        ],
+        "label": "Playing ten pins"
+      }
+    ]
+  },
+  "t6f_O8a4sSg": {
+    "duration": 218.52,
+    "subset": "validation",
+    "resolution": "1920x1080",
+    "url": "https://www.youtube.com/watch?v=t6f_O8a4sSg",
+    "annotations": [
+      {
+        "segment": [
+          14.999980897195073,
+          30.681779107899008
+        ],
+        "label": "Skateboarding"
+      },
+      {
+        "segment": [
+          34.431774332197776,
+          34.77268298895221
+        ],
+        "label": "Skateboarding"
+      },
+      {
+        "segment": [
+          36.47722627272438,
+          37.159043586233246
+        ],
+        "label": "Skateboarding"
+      },
+      {
+        "segment": [
+          38.86358687000541,
+          40.227221497023145
+        ],
+        "label": "Skateboarding"
+      },
+      {
+        "segment": [
+          41.59085612404088,
+          43.63630806456748
+        ],
+        "label": "Skateboarding"
+      },
+      {
+        "segment": [
+          45.681760005094084,
+          46.36357731860295
+        ],
+        "label": "Skateboarding"
+      },
+      {
+        "segment": [
+          48.06812060237512,
+          49.43175522939285
+        ],
+        "label": "Skateboarding"
+      },
+      {
+        "segment": [
+          51.136298513165016,
+          53.18175045369162
+        ],
+        "label": "Skateboarding"
+      },
+      {
+        "segment": [
+          54.88629373746378,
+          55.90901970772708
+        ],
+        "label": "Skateboarding"
+      },
+      {
+        "segment": [
+          57.95447164825369,
+          59.659014932025855
+        ],
+        "label": "Skateboarding"
+      },
+      {
+        "segment": [
+          61.363558215798015,
+          63.40901015632462
+        ],
+        "label": "Skateboarding"
+      },
+      {
+        "segment": [
+          66.47718806711453,
+          92.7271546372059
+        ],
+        "label": "Skateboarding"
+      },
+      {
+        "segment": [
+          96.8180585182591,
+          102.27259702633003
+        ],
+        "label": "Skateboarding"
+      },
+      {
+        "segment": [
+          105.68168359387437,
+          110.45440478843643
+        ],
+        "label": "Skateboarding"
+      },
+      {
+        "segment": [
+          118.2953038937884,
+          127.49983762615813
+        ],
+        "label": "Skateboarding"
+      },
+      {
+        "segment": [
+          131.5907415072113,
+          143.86345315037093
+        ],
+        "label": "Skateboarding"
+      },
+      {
+        "segment": [
+          148.63617434493298,
+          157.84070807730268
+        ],
+        "label": "Skateboarding"
+      },
+      {
+        "segment": [
+          162.61342927186476,
+          177.95431882581425
+        ],
+        "label": "Skateboarding"
+      }
+    ]
+  },
+  "6gyD-Mte2ZM": {
+    "duration": 188.245,
+    "subset": "validation",
+    "resolution": "1280x720",
+    "url": "https://www.youtube.com/watch?v=6gyD-Mte2ZM",
+    "annotations": [
+      {
+        "segment": [
+          21.43810386973302,
+          32.59766478822418
+        ],
+        "label": "Playing ten pins"
+      },
+      {
+        "segment": [
+          36.12173665722139,
+          39.93948118196837
+        ],
+        "label": "Playing ten pins"
+      },
+      {
+        "segment": [
+          36.41540931297116,
+          40.5268264934679
+        ],
+        "label": "Playing ten pins"
+      },
+      {
+        "segment": [
+          0.2,
+          188.0441723356009
+        ],
+        "label": "Playing ten pins"
+      },
+      {
+        "segment": [
+          0.2,
+          188.0441723356009
+        ],
+        "label": "Playing ten pins"
+      },
+      {
+        "segment": [
+          0.2,
+          188.0441723356009
+        ],
+        "label": "Playing ten pins"
+      },
+      {
+        "segment": [
+          0.2,
+          188.0441723356009
+        ],
+        "label": "Playing ten pins"
+      },
+      {
+        "segment": [
+          0.2,
+          188.0441723356009
+        ],
+        "label": "Playing ten pins"
+      },
+      {
+        "segment": [
+          0.2,
+          188.0441723356009
+        ],
+        "label": "Playing ten pins"
+      },
+      {
+        "segment": [
+          0.2,
+          188.0441723356009
+        ],
+        "label": "Playing ten pins"
+      },
+      {
+        "segment": [
+          0.2,
+          188.0441723356009
+        ],
+        "label": "Playing ten pins"
+      },
+      {
+        "segment": [
+          0.2,
+          188.0441723356009
+        ],
+        "label": "Playing ten pins"
+      },
+      {
+        "segment": [
+          0.2,
+          188.0441723356009
+        ],
+        "label": "Playing ten pins"
+      },
+      {
+        "segment": [
+          0.2,
+          188.0441723356009
+        ],
+        "label": "Playing ten pins"
+      },
+      {
+        "segment": [
+          0.2,
+          188.0441723356009
+        ],
+        "label": "Playing ten pins"
+      },
+      {
+        "segment": [
+          0.2,
+          188.044172
+        ],
+        "label": "Playing ten pins"
+      },
+      {
+        "segment": [
+          0.2,
+          188.044172
+        ],
+        "label": "Playing ten pins"
+      },
+      {
+        "segment": [
+          176.79093844617785,
+          180.02133765366614
+        ],
+        "label": "Playing ten pins"
+      }
+    ]
+  },
+  "jBvGvVw3R-Q": {
+    "duration": 218.62,
+    "subset": "training",
+    "resolution": "1280x720",
+    "url": "https://www.youtube.com/watch?v=jBvGvVw3R-Q",
+    "annotations": [
+      {
+        "segment": [
+          19.776733229329174,
+          23.868471138845557
+        ],
+        "label": "Snatch"
+      },
+      {
+        "segment": [
+          26.93727457098284,
+          29.66509984399376
+        ],
+        "label": "Snatch"
+      },
+      {
+        "segment": [
+          30.006078003120127,
+          36.82564118564743
+        ],
+        "label": "Snatch"
+      },
+      {
+        "segment": [
+          38.18955382215289,
+          42.963248049921994
+        ],
+        "label": "Snatch"
+      },
+      {
+        "segment": [
+          42.963248049921994,
+          50.46476755070203
+        ],
+        "label": "Snatch"
+      },
+      {
+        "segment": [
+          54.55650546021841,
+          57.62530889235569
+        ],
+        "label": "Snatch"
+      },
+      {
+        "segment": [
+          58.648243369734786,
+          63.08095943837753
+        ],
+        "label": "Snatch"
+      },
+      {
+        "segment": [
+          64.10389391575663,
+          66.14976287051482
+        ],
+        "label": "Snatch"
+      },
+      {
+        "segment": [
+          67.85465366614665,
+          71.60541341653666
+        ],
+        "label": "Snatch"
+      },
+      {
+        "segment": [
+          74.67421684867395,
+          79.78888923556943
+        ],
+        "label": "Snatch"
+      },
+      {
+        "segment": [
+          81.83475819032762,
+          87.63138689547581
+        ],
+        "label": "Snatch"
+      },
+      {
+        "segment": [
+          91.72312480499221,
+          95.13290639625585
+        ],
+        "label": "Snatch"
+      },
+      {
+        "segment": [
+          100.58855694227769,
+          110.13594539781592
+        ],
+        "label": "Snatch"
+      },
+      {
+        "segment": [
+          117.97844305772232,
+          124.7980062402496
+        ],
+        "label": "Snatch"
+      },
+      {
+        "segment": [
+          127.86680967238689,
+          144.23376131045242
+        ],
+        "label": "Snatch"
+      },
+      {
+        "segment": [
+          146.96158658346334,
+          159.2368003120125
+        ],
+        "label": "Snatch"
+      },
+      {
+        "segment": [
+          164.69245085803433,
+          178.67255538221528
+        ],
+        "label": "Snatch"
+      },
+      {
+        "segment": [
+          180.3774461778471,
+          196.0624414976599
+        ],
+        "label": "Snatch"
+      }
+    ]
+  },
+  "PJ72Yl0B1rY": {
+    "duration": 206.332,
+    "subset": "validation",
+    "resolution": "358x240",
+    "url": "https://www.youtube.com/watch?v=PJ72Yl0B1rY",
+    "annotations": [
+      {
+        "segment": [
+          10.941581903276132,
+          24.457653666146648
+        ],
+        "label": "Beach soccer"
+      },
+      {
+        "segment": [
+          35.39923556942278,
+          67.25854758190327
+        ],
+        "label": "Beach soccer"
+      },
+      {
+        "segment": [
+          72.72933853354134,
+          88.49808892355695
+        ],
+        "label": "Beach soccer"
+      },
+      {
+        "segment": [
+          93.32525741029642,
+          95.8997472698908
+        ],
+        "label": "Beach soccer"
+      },
+      {
+        "segment": [
+          99.43967082683308,
+          123.89732449297972
+        ],
+        "label": "Beach soccer"
+      },
+      {
+        "segment": [
+          132.90803900156007,
+          133.22985023400935
+        ],
+        "label": "Beach soccer"
+      },
+      {
+        "segment": [
+          99.43967082683308,
+          100.08329329173168
+        ],
+        "label": "Beach soccer"
+      },
+      {
+        "segment": [
+          115.85204368174726,
+          118.42653354134166
+        ],
+        "label": "Beach soccer"
+      },
+      {
+        "segment": [
+          120.67921216848674,
+          123.90933697347893
+        ],
+        "label": "Beach soccer"
+      },
+      {
+        "segment": [
+          131.6335553822153,
+          133.56460998439937
+        ],
+        "label": "Beach soccer"
+      },
+      {
+        "segment": [
+          137.1048767550702,
+          139.35777379095163
+        ],
+        "label": "Beach soccer"
+      },
+      {
+        "segment": [
+          142.89804056162248,
+          144.18541029641185
+        ],
+        "label": "Beach soccer"
+      },
+      {
+        "segment": [
+          147.72567706708267,
+          151.2659438377535
+        ],
+        "label": "Beach soccer"
+      },
+      {
+        "segment": [
+          157.70279251170047,
+          166.39253822152884
+        ],
+        "label": "Beach soccer"
+      },
+      {
+        "segment": [
+          168.0017503900156,
+          173.4730717628705
+        ],
+        "label": "Beach soccer"
+      },
+      {
+        "segment": [
+          180.55360530421217,
+          183.12834477379096
+        ],
+        "label": "Beach soccer"
+      },
+      {
+        "segment": [
+          187.95598127925115,
+          195.35835725429015
+        ],
+        "label": "Beach soccer"
+      }
+    ]
+  },
+  "QHn9KyE-zZo": {
+    "duration": 196.279,
+    "subset": "validation",
+    "resolution": "1920x1080",
+    "url": "https://www.youtube.com/watch?v=QHn9KyE-zZo",
+    "annotations": [
+      {
+        "segment": [
+          0.01,
+          7.961349719294894
+        ],
+        "label": "Slacklining"
+      },
+      {
+        "segment": [
+          13.779259129548853,
+          18.37234550606514
+        ],
+        "label": "Slacklining"
+      },
+      {
+        "segment": [
+          33.070221910917255,
+          35.21366221995819
+        ],
+        "label": "Slacklining"
+      },
+      {
+        "segment": [
+          43.4812176976875,
+          46.543275282031686
+        ],
+        "label": "Slacklining"
+      },
+      {
+        "segment": [
+          54.50462500132658,
+          64.30320927122798
+        ],
+        "label": "Slacklining"
+      },
+      {
+        "segment": [
+          68.89629564774427,
+          72.26455899052287
+        ],
+        "label": "Slacklining"
+      },
+      {
+        "segment": [
+          77.470056883908,
+          79.61349719294894
+        ],
+        "label": "Slacklining"
+      },
+      {
+        "segment": [
+          90.02449297971918,
+          94.31137359780105
+        ],
+        "label": "Slacklining"
+      },
+      {
+        "segment": [
+          100.12928292823713,
+          107.478221124805
+        ],
+        "label": "Slacklining"
+      },
+      {
+        "segment": [
+          115.43957083775352,
+          123.70712630889236
+        ],
+        "label": "Slacklining"
+      },
+      {
+        "segment": [
+          128.3002126817473,
+          130.44365298907957
+        ],
+        "label": "Slacklining"
+      },
+      {
+        "segment": [
+          134.1181220873635,
+          148.20358696411859
+        ],
+        "label": "Slacklining"
+      },
+      {
+        "segment": [
+          151.57185030421218,
+          161.676640324493
+        ],
+        "label": "Slacklining"
+      },
+      {
+        "segment": [
+          164.73869790639625,
+          166.57593245553824
+        ],
+        "label": "Slacklining"
+      },
+      {
+        "segment": [
+          169.6379900374415,
+          172.08763610296413
+        ],
+        "label": "Slacklining"
+      },
+      {
+        "segment": [
+          178.51795702496102,
+          184.9482779469579
+        ],
+        "label": "Slacklining"
+      },
+      {
+        "segment": [
+          191.07239311076444,
+          196.277891
+        ],
+        "label": "Slacklining"
+      }
+    ]
+  }
+}
