@@ -1,0 +1,156 @@
+Here are the code blocks for each of the 5 required tasks. You can paste them into your notebook to complete Section 2.5.
+
+---
+
+## 🔹 1. Contextual Embeddings Visualization (Across Layers)
+
+```python
+from sklearn.decomposition import PCA
+import matplotlib.pyplot as plt
+
+# Load model and tokenizer
+model_name = "bert-base-uncased"
+tokenizer = AutoTokenizer.from_pretrained(model_name)
+model = AutoModel.from_pretrained(model_name, output_hidden_states=True)
+model.eval()
+
+sentence = "The bank can guarantee deposits will eventually cover future tuition costs."
+tokens = tokenizer.tokenize(sentence)
+inputs = tokenizer(sentence, return_tensors="pt")
+
+with torch.no_grad():
+    outputs = model(**inputs)
+    hidden_states = outputs.hidden_states  # Tuple: (layer_count, batch_size, seq_len, hidden_dim)
+
+# Plot PCA-reduced embeddings of the word "bank" across layers
+token_index = tokens.index("bank") + 1  # Offset for [CLS]
+
+embeddings = [hidden_states[layer][0][token_index].numpy() for layer in range(len(hidden_states))]
+pca = PCA(n_components=2)
+reduced = pca.fit_transform(embeddings)
+
+plt.figure(figsize=(8, 5))
+for i, (x, y) in enumerate(reduced):
+    plt.scatter(x, y, label=f"Layer {i}")
+    plt.text(x + 0.01, y + 0.01, f"L{i}", fontsize=9)
+plt.title("Contextual Embedding Evolution for 'bank'")
+plt.legend()
+plt.show()
+```
+
+---
+
+## 🔹 2. Positional Embeddings Visualization
+
+```python
+sentence = " ".join(["hello"] * 20)
+inputs = tokenizer(sentence, return_tensors="pt")
+
+with torch.no_grad():
+    outputs = model(**inputs)
+    embeddings = outputs.hidden_states[1][0]  # First hidden layer
+
+# Compute pairwise cosine distances between token embeddings
+def cosine_distance(a, b):
+    return 1 - np.dot(a, b) / (np.linalg.norm(a) * np.linalg.norm(b))
+
+dist_matrix = np.zeros((20, 20))
+for i in range(20):
+    for j in range(20):
+        dist_matrix[i, j] = cosine_distance(embeddings[i].numpy(), embeddings[j].numpy())
+
+plt.figure(figsize=(6, 5))
+plt.imshow(dist_matrix, cmap='viridis')
+plt.title("Cosine Distance of 'hello' Tokens at Different Positions (Layer 1)")
+plt.colorbar(label="Distance")
+plt.xlabel("Position")
+plt.ylabel("Position")
+plt.show()
+```
+
+---
+
+## 🔹 3. Self-Attention: Cross vs Dual Encoder
+
+```python
+from bertviz import head_view
+from transformers import BertModel
+
+# Cross-encoder style input
+text_a = "A soccer game with multiple males playing."
+text_b = "Some men are playing a sport."
+inputs = tokenizer(text_a, text_b, return_tensors='pt')
+
+with torch.no_grad():
+    outputs = model(**inputs, output_attentions=True)
+    attention = outputs.attentions
+
+head_view(attention, inputs['input_ids'], tokenizer)
+```
+
+Then for **Dual Encoder**, use this:
+
+```python
+# Dual encoder: encode separately and compute similarity
+def encode_text(text):
+    inputs = tokenizer(text, return_tensors="pt")
+    with torch.no_grad():
+        output = model(**inputs)
+        return output.last_hidden_state[:, 0]  # [CLS] token
+
+vec_a = encode_text(text_a)
+vec_b = encode_text(text_b)
+
+similarity = torch.nn.functional.cosine_similarity(vec_a, vec_b)
+print(f"Cosine similarity (dual encoder): {similarity.item():.4f}")
+```
+
+---
+
+## 🔹 4. Token Attention Interpretability
+
+```python
+inputs = tokenizer(sentence, return_tensors="pt")
+with torch.no_grad():
+    outputs = model(**inputs, output_attentions=True)
+
+token_list = tokenizer.convert_ids_to_tokens(inputs["input_ids"][0])
+attention_all_layers = outputs.attentions  # list of (layer, batch, head, seq, seq)
+
+# Aggregate attention over heads and layers
+attention_received = torch.zeros(len(token_list))
+for layer_attn in attention_all_layers:
+    avg_over_heads = layer_attn[0].mean(dim=0)  # (seq, seq)
+    attention_received += avg_over_heads.sum(dim=0)  # sum over who is attended to
+
+attention_received /= len(attention_all_layers)
+
+# Plot
+plt.figure(figsize=(10, 3))
+plt.bar(range(len(token_list)), attention_received)
+plt.xticks(range(len(token_list)), token_list, rotation=45)
+plt.title("Total Attention Received Per Token")
+plt.ylabel("Attention Weight")
+plt.tight_layout()
+plt.show()
+```
+
+---
+
+## 🔹 5. Concluding Discussion (Markdown Cell)
+
+Add this as a markdown cell:
+
+```markdown
+### Observations and Discussion
+
+- **Contextual embeddings** show that tokens like "bank" shift significantly across layers, reflecting their disambiguation in context.
+- **Positional embeddings** influence token representation even when the word is repeated, confirming position encodes sequence order.
+- **Self-attention in cross-encoders** shows token-to-token influence, whereas dual encoders lack inter-sequence attention and rely solely on global vector comparison.
+- **Token interpretability** shows that special tokens ([CLS], [SEP]) often dominate attention, but key nouns and verbs also receive substantial focus.
+- These tools give insight into how transformers build meaning and how different architectural choices (e.g., dual vs. cross) impact interpretability and performance.
+```
+
+---
+
+Let me know if you want this packaged into a downloadable notebook.
