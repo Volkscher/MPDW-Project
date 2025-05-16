@@ -1,1 +1,5 @@
-*.mp4
+# Ignore all files in keyframes/ directory
+keyframes/
+
+# Ignore all videos downloaded from YouTube
+videos/
