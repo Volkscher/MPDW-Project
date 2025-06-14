@@ -5,6 +5,7 @@
 import threading
 import time
 from project_final_helper import setup_phase2
+from project_final_phase3_helper import setup_phase3
 
 def start_menu():
     print("MPDW Project Final Phase")
@@ -28,9 +29,10 @@ def start_menu():
         if(choice in valid_inputs):
             if(choice == "1"):
                 print("choice 1")
+                phase_2_menu()
             if(choice == "2"):
                 print("choise 2")
-                phase_2_menu()
+                phase_3_menu()
             if(choice == "3"):
                 print("Exiting...")
                 break
@@ -62,6 +64,10 @@ def phase_2_menu():
     stop_event.set()
     loader_thread.join()
 
+
+def phase_3_menu():
+    print("Phase 3")
+    setup_phase3()
 
 
 def start():
