@@ -88,10 +88,10 @@ def create_opensearch_index():
     index_exists = client.indices.exists(index=index_name)
     if not index_exists:
         client.indices.create(index=index_name, body=index_body)
-        print(f"Índice '{index_name}' criado.")
+        print(f"Index '{index_name}' created.")
         return True
     else:
-        print(f"Índice '{index_name}' já existe.")
+        print(f"Index '{index_name}' already exists. Skipping creation and indexing...")
         return False
     
 #######
@@ -111,7 +111,6 @@ def download_video(youtube_url, output_dir="videos"):
         with yt_dlp.YoutubeDL(ydl_opts) as ydl:
             info = ydl.extract_info(youtube_url, download=True)
             video_file = os.path.join(output_dir, f"{info['title']}.{info['ext']}")
-            #print(f"Downloaded: {video_file}")
             return video_file
 
     except yt_dlp.utils.DownloadError as e:
@@ -150,13 +149,12 @@ def extract_keyframes(video_url, output_dir, interval=2):
         if frame_count % frame_interval == 0:
             frame_file = os.path.join(output_dir, f"frame_{saved_count:04d}.jpg")
             cv2.imwrite(frame_file, frame)
-            #print(f"Saved: {frame_file}")
             saved_count += 1
         
         frame_count += 1
         
-    #print(f"Extracted {saved_count} keyframes from '{video_path}' to '{output_dir}'")
     cap.release()
+
     return True
 
 ###############
@@ -186,18 +184,11 @@ def compute_clip_embeddings(image_dir, device='cuda' if torch.cuda.is_available(
 
 # This function is used to get the captions that are within the timeframe of the video.
 def get_caption_from_timeframe(captions_starts:[], captions_ends:[], en_captions: [], f_start_time: float, f_end_time:float):
-    #matching_starts = []
-    #matching_ends = []
     matching_captions = [""]
     
     for i, caption in enumerate(en_captions):
-        print(f"Caption {caption} starts at {captions_starts[i]} and ends at {captions_ends[i]}")
-        print(f"Frame starts at {f_start_time} and ends at {f_end_time}")
         if captions_starts[i] <= f_start_time and captions_ends[i] >= f_end_time:
-            #matching_starts.append(captions_starts[i])
-            #matching_ends.append(captions_ends[i])
             matching_captions.append(caption)
-            print(f"Caption {caption} matches the timeframe from {f_start_time} to {f_end_time}")
     
     return matching_captions
 
@@ -234,11 +225,10 @@ def load_phase2():
                 "captions_ends": video['captions_ends'],
                 "captions": video['en_captions'],
             }
-            
-            #print(f"Video ID: {video['video_id']}")
 
     # Iterate over each video
     for video_id, video_info in video_metadata.items():
+
         # Download the video and extract frames every 2 seconds
         if extract_keyframes(video_url= video_info['url'], output_dir=f"{keyframes_dir}/{video_id}", interval= 2) == False:
             print(f"Failed to extract keyframes for video {video_id}. Skipping...")
@@ -261,7 +251,7 @@ def load_phase2():
                 continue
             
             # Calculate the timestamp range for this frame
-            # VERIFY THAT THIS FRAME_DURATION IS WORKING (we might have deleted something that was a variable)
+            # Frame duration is 2, since that is what is present in extract_keyframes
             frame_duration = 2.0
             start_time = i * frame_duration
             end_time = start_time + frame_duration
@@ -324,12 +314,148 @@ def load_phase2():
     # Refresh the index so the docs are searchable
     client.indices.refresh(index = 'user13')
 
+def search_frame_by_text(text_query, top_k=5):
+    device = "cuda" if torch.cuda.is_available() else "cpu"
+    model, preprocess = clip.load("ViT-B/32", device=device)
+    
+    text_tokens = clip.tokenize([text_query]).to(device)
+    
+    with torch.no_grad():
+        text_embedding = model.encode_text(text_tokens).cpu().numpy()[0]
+
+    query_body = {
+        "size": 5,
+        "query": {
+            "knn": {
+                "frame_embedding": {
+                    "vector": text_embedding.tolist(),
+                    "k": top_k,
+                }
+            }
+        }
+    }
+    
+    response = client.search(index="user13", body=query_body)
+    to_return = []
+    
+    for hit in response['hits']['hits']:
+        file_hit = {
+            "video_id": hit['_source']['video_id'],
+            "frame_path": hit['_source']['frame_file'],
+            "score": hit['_score'],
+            "captions": hit['_source']['captions']
+        }
+
+        to_return.append(file_hit)
+    
+    return to_return
+
+def search_caption_by_image(image_path, top_k=5):
+    to_return = []
+    model, preprocess = clip.load("ViT-B/32", device=device)
+
+    # Embed the image passed by the user
+    # With this we can search for the most similar caption to the image
+    # This works because they are embedded with the same model, and therefore in the same space, which means we can compare them
+    img = Image.open(image_path)
+    img = preprocess(img).unsqueeze(0).to(device)
+    img_embedding = model.encode_image(img).cpu().tolist()[0]
+
+    query_body = {
+        "size": 5,
+        "query": {
+            "knn": {
+                "caption_embeddings": {
+                    "vector": img_embedding,
+                    "k": top_k,
+                }
+            }
+        }
+    }
+    
+    response = client.search(index="user13", body=query_body)
+    
+    # Show the Image
+    for hit in response['hits']['hits']:
+        file_hit = {
+            "video_id": hit['_source']['video_id'],
+            "frame_path": hit['_source']['frame_file'],
+            "score":hit['_score'],
+            "captions": hit['_source']['captions']
+        }
+
+        to_return.append(file_hit)
+        
+    return to_return
+
+def search_frame_by_image(image_path, top_k=5):
+    to_return = []
+    model, preprocess = clip.load("ViT-B/32", device=device)
+
+    # Embed the image passed by the user
+    # With this we can search for the most similar caption to the image
+    # This works because they are embedded with the same model, and therefore in the same space, which means we can compare them
+    img = Image.open(image_path)
+    img = preprocess(img).unsqueeze(0).to(device)
+    img_embedding = model.encode_image(img).cpu().tolist()[0]
+
+    query_body = {
+        "size": 5,
+        "query": {
+            "knn": {
+                "frame_embedding": {
+                    "vector": img_embedding,
+                    "k": top_k,
+                }
+            }
+        }
+    }
+    
+    response = client.search(index="user13", body=query_body)
+
+    for hit in response['hits']['hits']:
+        file_hit = {
+            "video_id": hit['_source']['video_id'],
+            "frame_path": hit['_source']['frame_file'],
+            "score": hit['_score'],
+            "captions": hit['_source']['captions']
+        }
+
+        to_return.append(file_hit)
+    
+    return to_return
+    
+
+def display_comparison(filename, hit):
+    # Load query and retrieved images
+    query_img = Image.open(f"./sample_images/{filename}") # query image
+    hit_img = Image.open(f"./keyframes/{hit['video_id']}/{hit['frame_path']}") #
+
+    # Create side-by-side plot
+    fig, axs = plt.subplots(1, 2, figsize=(12, 6))
+
+    # Query image (the image the user inserted)
+    axs[0].imshow(query_img)
+    axs[0].set_title("Query Frame")
+    axs[0].axis('off')
+
+    # Retrieved image (the hit)
+    axs[1].imshow(hit_img)
+    axs[1].set_title(f"Retrieved (Score: {hit['score']:.4f})")
+    axs[1].axis('off')
+
+    # Add caption below both images
+    caption_text = "\n".join(hit['captions']) if isinstance(hit['captions'], list) else "no captions"
+    fig.text(0.5, 0.02, caption_text, ha='center', wrap=True, fontsize=10)
+
+    plt.tight_layout()
+    plt.show()
+    
+
+    
+
 def setup_phase2():
     index_created = create_opensearch_index()
 
-    if (not index_created):
+    if (index_created): #if the index was created, then there was no previous index. Therefore we need to load and index the documents
         load_phase2()
-    else:
-        load_phase2()
-        # index already created, we don't download or load anything, to do later
-
